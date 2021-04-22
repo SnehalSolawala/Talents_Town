@@ -1,0 +1,147 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.profile{
+    background-color:lightgray;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.profile div{
+    text-align: center;
+    color: black;
+    padding: 0.6rem;
+}
+.allvideo{
+    background-color: black; 
+    border-radius: 7px;
+}
+.allvideo p{
+    color: white;
+}
+.profile div:hover{
+    background-color: black;
+    border-radius: 7px;
+}
+.profile div a{
+    color: black;
+}
+.profile div:hover a{
+    color: white;
+    text-decoration: none;
+}
+.head{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+.text1{
+    width: 100%;
+    padding: 5%;
+    background-color: transparent;
+}
+/* .search1{
+    width: 50%;
+    background-color:transparent;
+    align-self: center;
+    justify-items: center;
+} */
+.box1{
+    margin: 0;
+}
+.black{
+    background-color: black;
+    height: 5vh;
+}
+.head2{
+    width: 100%;
+    /* background-color: lightgrey; */
+    display: flex;
+    flex-direction: row;
+}
+/* .head2_left{
+    width: 30%;
+    align-self: center;
+} */
+.head2_right{
+    width: 100%;
+    text-align: center;
+}
+.videos{
+    width: 100%;
+    padding-top: 5%;
+    /* background-color: chartreuse; */
+    display: flex;
+    flex-wrap: wrap;
+}
+.box{
+    width: 25%;
+    margin-left: 6.25%;
+    margin-bottom: 3%;
+    background-color: black;
+}
+.video_text{
+    color: white;
+}
+video{
+    height: 40vh;
+}
+@media screen and (max-width : 768px){
+    .profile{
+        position: relative;
+    }
+    .videos{
+        
+    }
+    .box{
+        width: 46%;
+        margin: 2% 2%;
+    }
+}
+@media screen and (max-width:600px){
+    .profile{
+        flex-direction: column;
+    }
+    .head{
+        flex-direction: column;
+    }
+    .text1{
+        width: 100%;
+    }
+    .search1{
+        width: 100%;
+    }
+    .box1{
+        margin: 3%;
+    }
+    .btn1{
+        margin: 3%;
+        margin-top: 0;
+    }
+    .head2{
+        flex-direction: column;
+    }
+    .head2_left{
+        width: 100%;
+        align-self: center;
+    }
+    .head2_right{
+        width: 100%;
+        padding: 5%;
+    }
+    .videos{
+        flex-direction: column;
+    }
+    .box{
+        width: 96%;
+        margin: 2% 2%;
+    }
+    .pageex{
+        display: none;    
+    }
+}

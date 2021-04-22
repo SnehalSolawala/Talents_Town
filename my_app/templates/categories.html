@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</head>
+<style>
+    body{
+        background-color: aliceblue;
+    }
+</style>
+<body>
+    <br>
+    <hr>
+    <h1 class="text-center"><u>Select Categories</u></h1>
+    <hr><br><br>
+    <div class="col-md-3 mx-auto ">
+        <a href="{% url 'index' %}" class="btn btn-secondary mb-4 p-2 col-md-12">All_Categories</a>
+    <form action="{% url 'categories'%}" method="post">
+        {% csrf_token %}
+        <input type="submit" name='submit' class="btn btn-secondary mb-4 p-2 col-md-12" value="Dancing">
+        <input type="submit" name='submit' class="btn btn-success mb-4 p-2 col-md-12" value="Comedy">
+        <input type="submit" name='submit' class="btn btn-danger mb-4 p-2 col-md-12" value="Lipsing">
+        <input type="submit" name='submit' class="btn btn-warning mb-4 p-2 col-md-12" value="Acting">
+        <input type="submit" name='submit' class="btn btn-info mb-4 p-2 col-md-12" value="VideoShooting">
+        <input type="submit" name='submit' class="btn btn-dark mb-4 p-2 col-md-12" value="Modeling">
+    </form>
+        <!-- <a class="btn btn-primary  d-block mb-4 p-2 col-md-12" href="{% url 'filter' %}">All Categories</a>
+        <a class="btn btn-primary  d-block mb-4 p-2 col-md-12" href="{% url 'filter' %}">Dancing</a>
+        <a class="btn btn-secondary d-block mb-4 p-2 col-md-12" href="{% url 'filter' %}">Comedy</a>
+        <a class="btn btn-success d-block mb-4 p-2 col-md-12" href="{% url 'filter' %}">Lipsing</a>
+        <a class="btn btn-danger d-block mb-4 p-2 col-md-12" href="{% url 'filter' %}">Acting</a>
+        <a class="btn btn-warning d-block mb-4 p-2 col-md-12" href="{% url 'filter' %}">Video Shooting</a>
+        <a class="btn btn-info d-block mb-4 p-2 col-md-12" href="{% url 'filter' %}">Modeling</a> -->
+        
+    </div>
+    <a class="btn btn-primary" style="position: fixed; right: 1%; z-index: 100;bottom: 2%;" href="{% url 'index' %}">Home</a>
+</body>
+</html>

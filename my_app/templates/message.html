@@ -1,0 +1,37 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <!-- jQuery and JS bundle w/ Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <!-- <link rel="stylesheet" href="../static/assets/css/notification.css"> -->
+    <link rel="stylesheet" href="{% static 'assets/css/notification.css' %}">
+</head>
+<body>
+    <br><br>
+    <h1 style="text-align: center; font-size: 42px;"><u>Messages</u></h1><br><br>
+    {% for i in lc %}
+    {% if i.video.user.EmailId == email %}
+    <div class="notice">
+        <h4 class="text-center">Sender : {{i.user.FirstName}} : {{i.user.EmailId}}</h4>
+        <h4 class="text-center">Reciever : {{i.video.user.EmailId}}</h4>
+
+        <h3 class="text-center">Title : {{i.subject}}</h3>
+        
+        <h6 class="text-center">Description : {{i.message}}</h6>
+        <p class="text-center"> Created At : {{i.created_at}}</p>
+    </div><br><br>
+    {% endif %}
+    {% endfor %}
+    <a class="btn btn-primary" style="position: fixed; right: 1%; z-index: 100;bottom: 2%;" href="{% url 'index' %}">Home</a>
+</body>
+</html>

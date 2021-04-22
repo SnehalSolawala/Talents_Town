@@ -1,0 +1,112 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>			
+	<title>Upload_Video</title>
+	<meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	  <link rel="stylesheet" href="{% static 'assets/css/index.css' %}">
+	<style type="text/css">
+		
+		.inner {
+			width: 50%;
+			margin:2% auto;
+			background-color: #ecedf3;
+			padding: 5%;
+			box-shadow: 0px 0px 5px lightgray;
+		}
+		body{
+			background-color: rgba(240, 248, 255, 0.322);
+
+		}
+		*{
+            margin:0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .head{
+            background-image: url('{% static "img/head2.jpg" %}');
+			background-attachment: fixed;
+			background-repeat: no-repeat;
+			background-size: cover;
+            position: relative;
+            /* background-position: center bottom; */
+			z-index: 0;
+        }
+		@media screen and (max-width : 768px){
+		.inner{
+			width: 90%;
+		}
+		}
+
+	</style>
+</head>
+<body>
+
+	<!-- <div class="profile">
+		<div><a href="{% url 'index' %}" >All Videos</a></div>
+		<div><a href="toprated.html">Top Rated</a></div>
+		<div><a href="{% url 'categories' %}">Categories</a></div>
+		<div><a href="{% url 'notification' %}">Notification</a></div>
+		<div class="allvideo"><a href="{% url 'upload_media' %}"  style="color:white">Upload Video</a></div>
+		<div><a href="{% url 'my_account' %}">{{user.FirstName}}</a></div>
+		{% if user.role == 'director' %}
+			<div><a href="{% url 'add_notification' %}">Add Event</a></div>
+		{% endif %}
+		<div><a href="{% url 'logout' %}">Logout</a></div>
+	</div><br><br><br><br>
+	<div class="head">
+		<div class="text1">
+			<h1 style="margin-bottom: 0px; text-align: center;">TALENT TOWN</h1>
+		</div>
+	</div>
+	<div class="black"></div>
+	<br><br><br>
+         -->
+		<div class="outer">
+			<div class="inner">
+				<form action="{% url 'upload_media' %}" method="POST" enctype="multipart/form-data">
+					{% csrf_token %}
+					  <h3>Upload your videos here</h3><hr>
+					  <div class="form-group" style="margin-top: 30px;">
+					    <label for="exampleInputEmail1">Title</label>
+					    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="title" required>
+					    
+
+					  </div>
+					  <div class="form-group" style="margin-top: 20px;">
+					    <label for="exampleInputPassword1">Category</label>
+					    <select class="form-control" id="input_7" name="category" style="width:310px" data-component="dropdown" aria-labelledby="label_7" required>
+				            <option value=""> Please Select </option>
+				            <option value="Dancing"> Dancing </option>
+				            <option value="Comedy"> Comedy </option>
+				            <option value="Lipsing"> Lipsing </option>
+				            <option value="Acting"> Acting </option>
+				            <option value="VideoShooting"> VideoShooting </option>
+				            <option value="Modeling"> Modeling </option>
+          				</select> 
+					  </div>
+
+					  <input type="hidden" name="email" value="pparihar14082001@gmail.com">
+					  <div class="form-group" style="margin-top: 20px;">
+					    <label for="exampleInputEmail1">File</label>
+					    <input type="file" class="form-control" id="exampleInputEmail1" aria-describedby="" name="file" style="background-color:#ecedf3; border:none;" required>
+					  </div>
+
+					  <div class="form-group" style="margin-top: 50px;">
+    					<label for="exampleFormControlTextarea1">Example Description</label>
+    					<textarea class="form-control" id="exampleFormControlTextarea1" name="dis" rows="6" required></textarea>
+  					</div>
+
+					  <button type="submit" class="btn btn-primary">Submit</button>
+					</form>
+			</div>
+		</div>
+		<a class="btn btn-primary" style="position: fixed; right: 1%; z-index: 100;bottom: 2%;" href="{% url 'index' %}">Home</a>
+</body>
+</html>

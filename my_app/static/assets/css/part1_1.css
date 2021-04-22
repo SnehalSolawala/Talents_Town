@@ -1,0 +1,116 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* body{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */
+.main_div{
+    background-color:black;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    margin: 0px auto;
+    height: 90vh;
+    margin-top: 5vh;
+}
+.left_div{
+    width: 50%;
+    background-color: lightblue;
+    border:1px solid black;
+}
+.right_div{
+    width: 50%;
+    background-color: black;
+    display: flex;
+    
+}
+#right1{
+    margin:0px auto;
+    display: flex;
+    align-items: center;
+}
+#right2{
+    margin: 0px auto;
+    display: none; 
+    align-items: center; 
+}
+#right2a{
+    margin-top: 15%;
+}
+label{
+    font-size: 1.3rem;
+    color: white;
+}
+input{
+    background-color: transparent;
+    padding: 5px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 3px solid white;
+
+}
+input[type="text"],input[type="password"]{
+    font-size: 1.5rem;
+}
+input::placeholder{
+    font-size: 1.5rem;
+    color: white;
+}
+input:focus{
+    border-bottom: 3px dashed  turquoise;
+    outline:none;
+}
+input:focus::placeholder{
+    color: turquoise;
+}
+.header{
+    text-align: center;
+}
+.button1{
+    width: 40%;
+    margin: 0px auto;
+}
+.head_text{
+    text-align: center;
+    font-style: italic;
+    font-weight: bold;
+}
+#sign{
+    margin-top: 0;
+}
+@media screen and (max-width:1330px){
+    #sign{
+        margin-top: 1rem;
+    }
+}
+@media screen and (max-width:600px)
+{
+    .main_div{
+        flex-direction: column;
+    }
+    .left_div{
+        width: 100%;
+        padding-bottom: 10%;
+    }
+    .right_div{
+        width: 100%;
+        padding-top: 8%;
+
+    }
+    #right2a{
+        margin-top: 0;
+    }
+    .button1{
+        width: 56%;
+    
+    }
+    #sign{
+        margin:0;
+    }
+}

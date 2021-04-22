@@ -1,0 +1,86 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Talent Town Login</title>
+    <link rel="stylesheet" href="{% static 'assets/css/part1_1.css'%} ">
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script> -->
+    <!-- <script type="text/javascript" src="{% static 'assets/js/part1_1.js' %}"></script> -->
+    <script src="{% static 'assets/js/part1_1a.js' %}"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <!-- jQuery and JS bundle w/ Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <!--start main div-->
+    <div class="main_div">
+        <!--start left_div-->
+        <div class="left_div">
+            <div style=" display: inline; margin-left: 25%">
+            <img src="{% static 'img/logo3.png' %}" width="50%">
+            </div>
+            <h1 class="header">Talent Town</h1>
+            <p class="head_text">Unlease your inner talent , become a star.</p>
+            <br><br>
+            <div class="button1">
+            <button type="button" class="btn btn-primary" id="create" style="margin-left: 70px"><a href="{% url 'sign_up' %}" style="color: white;">Sign Up</a></button>
+           <!--  <button type="button" class="btn btn-primary" id="sign">Sign In</button> -->
+            </div>
+        </div>
+        <!--End left_div-->
+        <!--Start right_div-->
+        <div class="right_div">
+            <div id="right1">
+                <form action="{% url 'log_In' %}" method="POST" >
+                    {% csrf_token %}
+                    <input type="text" name="email" placeholder="Enter Your Email Id" size="20" style="color: white;" required><br>
+                    <br>
+                    <input type="password" name="password" placeholder="Enter Your Password" size="20" style="color: white;" required><br><br>
+                    <button type="submit" class="btn btn-primary" style="color: white;">Log In</button>
+                    <button type="button" class="btn btn-primary" style="margin-left: 65px;"  value="Forgot Password" ><a href="{% url 'forgot_password_1' %}" style="color: white;">Forgot Password</a></button>
+                    <!-- <a href="" style="margin-left: 65px;"><input type='button' value ="Forgot Password" class="btn btn-primary"></a> -->
+                </form>
+                <!-- <h1>{{msg}}</h1> -->
+                {% if message %}
+                    <div class="alert alert-primary" role="alert" style = "margin-top: 10px;">
+                            {{message}}
+                    </div>
+                {% endif %}
+
+                {% if pass %}
+                    <div class="alert alert-primary" role="alert" style = "margin-top: 10px;">
+                            {{pass}}
+                    </div>
+                {% endif %}
+            </div>
+           <!--  <div id="right2">
+                <div id="right2a">
+                    <form>
+                    
+                        <input type="text" name="fname" placeholder="First Name" size="20"><br>
+                        <br>
+                        <input type="text" name="lname" placeholder="Surname" size="20"><br>
+                        <br>
+                        <input type="text" name="mobile" placeholder="Mobile Number" size="20"><br>
+                        <br>
+                        <input type="text" name="mail" placeholder="Email Id" size="20"><br>
+                        <br>
+                        <input type="password" name="password" placeholder="Password" size="20"><br>
+                        <br>
+                        <input type="password" name="check_pass" placeholder="Check Password" size="20">
+                        <br><br>
+                        <button type="submit" class="btn btn-primary"><a href="index.html" style="color: white;">Sign in</a></button>
+                    </form>
+                </div>
+            </div> -->
+        </div>
+        <!--End right_div-->
+    </div>
+    <!--end main div-->
+</body>
+</html>

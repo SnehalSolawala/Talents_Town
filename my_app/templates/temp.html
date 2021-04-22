@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% for i in uv %}
+    <div class="box">
+        <div class="videos1">
+           <a href="http://google.com">  
+                <video width="100%" controls>
+                    <source src="{{i.video.url}}" type="video/mp4">
+                </video>
+            </a> 
+        </div>
+        <div class="video_text">
+            {{i.user.EmailId}} 
+        </div>
+        <h1>{{i.title}}</h1>
+        <p>{{i.dis}}</p>
+    </div>    
+    </div>   
+    
+        <!-- <h1>{{i.title}}</h1>
+        <p>{{i.dis}}</p>
+        <img src="{{i.video.url}}" alt="asd">
+        <h4></h4> -->
+
+    {% endfor %}
+
+    
+</body>
+</html>
